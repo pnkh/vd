@@ -38,10 +38,7 @@
       overflow-x:hidden;
       font-family:"Segoe UI", Arial, Tahoma, sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at 18% 14%, #0f4d72 0%, transparent 34%),
-        radial-gradient(circle at 82% 25%, #253e91 0%, transparent 36%),
-        linear-gradient(135deg, var(--bg1), var(--bg2));
+     
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
@@ -56,10 +53,7 @@
     .site-box{
       width:100%;
       min-height:100vh;
-      background:
-        radial-gradient(circle at 18% 14%, #0f4d72 0%, transparent 34%),
-        radial-gradient(circle at 82% 25%, #253e91 0%, transparent 36%),
-        linear-gradient(135deg, var(--bg1), var(--bg2));
+     
     }
 
     .wrap{
@@ -1698,43 +1692,19 @@
 
     /* v11 - macOS/iOS liquid glass background */
     html, body{
-      background:#07152c;
+     
     }
 
     .site-box{
       position:relative;
       min-height:100vh;
-      background:
-        linear-gradient(135deg, rgba(3, 16, 38, .22), rgba(17, 36, 102, .28)),
-        var(--main-bg-image) center center / cover fixed no-repeat;
+     
       overflow:hidden;
     }
 
-    .site-box::before{
-      content:"";
-      position:fixed;
-      inset:-8%;
-      z-index:0;
-      pointer-events:none;
-      background:
-        radial-gradient(circle at 16% 18%, rgba(95, 205, 255, .30), transparent 28%),
-        radial-gradient(circle at 78% 24%, rgba(89, 82, 255, .28), transparent 33%),
-        radial-gradient(circle at 62% 86%, rgba(255, 255, 255, .12), transparent 30%);
-      filter:blur(34px);
-      opacity:.72;
-      transform:translateZ(0);
-    }
+    
 
-    .site-box::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:0;
-      pointer-events:none;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.03), rgba(0,0,0,.18)),
-        radial-gradient(circle at center, transparent 0 42%, rgba(0,0,0,.22) 100%);
-    }
+    
 
     .wrap{
       position:relative;
@@ -1819,9 +1789,7 @@
 
     @media (max-width: 820px){
       .site-box{
-        background:
-          linear-gradient(135deg, rgba(3, 16, 38, .14), rgba(17, 36, 102, .20)),
-          var(--main-bg-image) center center / cover scroll no-repeat;
+       
       }
     }
 
@@ -1938,16 +1906,9 @@
     }
 
     /* nền có nhiều màu và sáng hơn một chút để glass blur nhìn rõ */
-    .site-box::before{
-      opacity:.92;
-      filter:blur(46px) saturate(125%);
-    }
+    
 
-    .site-box::after{
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.13)),
-        radial-gradient(circle at center, transparent 0 44%, rgba(0,0,0,.18) 100%);
-    }
+    
 
     @media (max-width: 820px){
       .album-card::before,
@@ -2011,10 +1972,7 @@
         linear-gradient(135deg, rgba(255,255,255,.24), rgba(255,255,255,.07) 48%, rgba(255,255,255,.15)) !important;
     }
 
-    .site-box::before{
-      opacity:.72 !important;
-      filter:blur(46px) saturate(100%) !important;
-    }
+    
 
     .detail-photo::before{
       filter:blur(30px) saturate(100%) brightness(1) !important;
@@ -2080,25 +2038,12 @@
 
     /* v16 - Nature background + professional loading animation */
     .site-box{
-      background:
-        linear-gradient(135deg, rgba(10, 28, 30, .28), rgba(18, 50, 42, .18)),
-        var(--main-bg-image) center center / cover fixed no-repeat !important;
+     
     }
 
-    .site-box::before{
-      background:
-        radial-gradient(circle at 18% 18%, rgba(255, 230, 130, .16), transparent 30%),
-        radial-gradient(circle at 78% 18%, rgba(78, 210, 120, .14), transparent 34%),
-        radial-gradient(circle at 55% 86%, rgba(255, 255, 255, .08), transparent 31%) !important;
-      filter:blur(42px) saturate(100%) !important;
-      opacity:.72 !important;
-    }
+    
 
-    .site-box::after{
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.22)),
-        radial-gradient(circle at center, transparent 0 42%, rgba(0,0,0,.23) 100%) !important;
-    }
+    
 
     .loading.loading-anim{
       grid-column:1 / -1;
@@ -2229,9 +2174,7 @@
 
     @media (max-width:820px){
       .site-box{
-        background:
-          linear-gradient(135deg, rgba(10, 28, 30, .22), rgba(18, 50, 42, .14)),
-          var(--main-bg-image) center center / cover scroll no-repeat !important;
+       
       }
 
       .loading.loading-anim{
@@ -2839,29 +2782,17 @@
     /* ===== v30 Viễn Đông layout ===== */
     body,
     html{
-      background:#030507 !important;
+     
     }
 
     .site-box{
       min-height:100vh;
       position:relative;
       overflow:hidden;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(0, 214, 255, .12), transparent 34%),
-        radial-gradient(circle at 18% 18%, rgba(0, 126, 255, .08), transparent 28%),
-        linear-gradient(180deg, #010204 0%, #020407 38%, #04080f 100%) !important;
+     
     }
 
-    .site-box::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), transparent 12%),
-        radial-gradient(circle at 50% 14%, rgba(0, 234, 255, .10), transparent 24%);
-      opacity:.9;
-    }
+    
 
     .wrap{
       position:relative;
@@ -5051,27 +4982,15 @@
 
 
 
-    /* NEN IOS XANH DEN - CHI THAY NEN, KHONG DOI CAC THANH PHAN KHAC */
+    
     html, body, .site-box{
-      background:
-        radial-gradient(ellipse 78% 34% at 18% 8%, rgba(88,91,160,.42) 0%, rgba(38,43,91,.26) 42%, transparent 64%),
-        radial-gradient(ellipse 72% 30% at 90% 25%, rgba(82,99,181,.30) 0%, rgba(39,46,100,.18) 48%, transparent 70%),
-        radial-gradient(ellipse 95% 38% at 20% 92%, rgba(65,72,139,.28) 0%, rgba(28,32,76,.16) 50%, transparent 72%),
-        linear-gradient(145deg,#070914 0%,#0b0e1d 32%,#11152d 62%,#080a15 100%) !important;
-      background-attachment:fixed !important;
+     
+     
     }
     .site-box{position:relative;isolation:isolate;overflow:hidden;}
-    .site-box::before, .site-box::after{
-      content:"";position:fixed;z-index:-1;pointer-events:none;
-      width:125vw;height:42vh;left:-28vw;
-      border:2px solid rgba(143,151,255,.28);
-      border-radius:50%;
-      box-shadow:0 0 18px rgba(94,104,220,.18), inset 0 0 22px rgba(118,127,255,.08);
-      transform:rotate(-24deg);
-      background:linear-gradient(180deg,rgba(67,69,128,.18),rgba(14,17,40,.04));
-    }
-    .site-box::before{top:5vh;}
-    .site-box::after{top:56vh;left:-8vw;transform:rotate(-31deg);opacity:.82;}
+    
+    
+    
 </style>
 
 <style>
@@ -5100,8 +5019,8 @@
 
 
 <style>
-.site-box::before{box-shadow:0 0 18px rgba(94,104,220,.18),inset 0 0 22px rgba(118,127,255,.08),0 72px 0 -1px rgba(116,128,238,.16)!important}
-.site-box::after{box-shadow:0 0 18px rgba(94,104,220,.18),inset 0 0 22px rgba(118,127,255,.08),0 72px 0 -1px rgba(105,118,225,.15)!important}
+
+
 .social.social-icon-btn{border-radius:16px!important;clip-path:inset(0 round 16px)!important;-webkit-clip-path:inset(0 round 16px)!important}
 .social.social-icon-btn::before,.social.social-icon-btn::after{border-radius:16px!important}
 </style>
@@ -5109,52 +5028,16 @@
 
 <style>
 /* Làm các đường cong mềm, mảnh, chuyển sắc nhẹ hơn */
-.site-box::before{
-  border-color: rgba(122,138,235,.16) !important;
-  filter: blur(.35px) !important;
-  box-shadow:
-    0 0 14px rgba(91,112,220,.08),
-    0 72px 0 -1px rgba(111,126,231,.09) !important;
-  opacity:.72 !important;
-}
-.site-box::after{
-  border-color: rgba(135,122,235,.14) !important;
-  filter: blur(.45px) !important;
-  box-shadow:
-    0 0 16px rgba(105,91,220,.07),
-    0 72px 0 -1px rgba(117,104,224,.08) !important;
-  opacity:.66 !important;
-}
+
+
 </style>
 
 
 <style>
 /* Chỉ giữ 2 dải cong nghệ thuật: mềm, bất đối xứng, hòa vào nền */
-.site-box::before{
-  width: 138vw !important;
-  height: 58vw !important;
-  left: -52vw !important;
-  top: 10vh !important;
-  transform: rotate(-24deg) skewX(-8deg) !important;
-  border: 1.4px solid rgba(118,136,238,.18) !important;
-  border-radius: 46% 54% 61% 39% / 58% 42% 56% 44% !important;
-  box-shadow: 0 0 18px rgba(92,111,220,.08) !important;
-  filter: blur(.25px) !important;
-  opacity: .72 !important;
-}
 
-.site-box::after{
-  width: 126vw !important;
-  height: 44vw !important;
-  right: -58vw !important;
-  top: 43vh !important;
-  transform: rotate(-31deg) skewX(7deg) !important;
-  border: 1.3px solid rgba(135,119,232,.15) !important;
-  border-radius: 57% 43% 38% 62% / 43% 59% 41% 57% !important;
-  box-shadow: 0 0 20px rgba(112,91,220,.07) !important;
-  filter: blur(.35px) !important;
-  opacity: .66 !important;
-}
+
+
 </style>
 
 
@@ -5176,16 +5059,8 @@
 }
 
 /* 2) Vùng phát sáng cạnh đường chỉ: tăng rất nhẹ khoảng 5% */
-.site-box::before{
-  box-shadow:
-    0 0 19px rgba(92,111,220,.085),
-    inset 0 0 18px rgba(107,126,235,.045) !important;
-}
-.site-box::after{
-  box-shadow:
-    0 0 21px rgba(112,91,220,.075),
-    inset 0 0 19px rgba(126,108,238,.04) !important;
-}
+
+
 
 /* 3) 4 nút: gương lỏng rõ hơn nhưng vẫn giữ góc vuông nhẹ */
 .social.social-icon-btn{
@@ -5352,49 +5227,42 @@ body.home-fit .social.social-icon-btn:hover{
 </style>
 
 
-<style id="vd-drive-background-final-override">
-/* Drive background final override
-   Chỉ sửa ảnh nền: thắng các background hard-code phía trên khi Apps Script đã trả ảnh nền. */
-body.has-drive-bg,
-body.has-drive-bg .site-box{
-  background-image:
-    linear-gradient(135deg, rgba(3,16,38,.22), rgba(17,36,102,.28)),
-    var(--main-bg-image),
-    radial-gradient(ellipse 78% 34% at 18% 8%, rgba(88,91,160,.42) 0%, rgba(38,43,91,.26) 42%, transparent 64%),
-    radial-gradient(ellipse 72% 30% at 90% 25%, rgba(82,99,181,.30) 0%, rgba(39,46,100,.18) 48%, transparent 70%),
-    linear-gradient(145deg,#070914 0%,#0b0e1d 32%,#11152d 62%,#080a15 100%) !important;
-  background-position:
-    center center,
-    center center,
-    center center,
-    center center,
-    center center !important;
-  background-size:
-    cover,
-    cover,
-    cover,
-    cover,
-    cover !important;
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat !important;
-  background-attachment:
-    fixed,
-    fixed,
-    fixed,
-    fixed,
-    fixed !important;
+
+<style id="vd-drive-background-100-only">
+/* Nền trang: chỉ ảnh lấy từ folder Google Drive, không lớp phủ và không gradient cũ. */
+html,
+body{
+  background-color:#000 !important;
+  background-image:none !important;
 }
 
-/* Lớp phủ cũ vẫn giữ, chỉ giảm nhẹ để ảnh nền nhìn ra rõ hơn. */
-body.has-drive-bg .site-box::before{
-  opacity:.34 !important;
+.site-box{
+  position:relative;
+  background-color:#000 !important;
+  background-image:none !important;
 }
-body.has-drive-bg .site-box::after{
-  opacity:.38 !important;
+
+html.has-drive-bg,
+body.has-drive-bg,
+body.has-drive-bg .site-box{
+  background-color:transparent !important;
+  background-image:var(--main-bg-image) !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  background-repeat:no-repeat !important;
+  background-attachment:fixed !important;
+  opacity:1 !important;
+}
+
+/* Vô hiệu hóa tuyệt đối các lớp phủ nền cũ. */
+.site-box::before,
+.site-box::after{
+  content:none !important;
+  display:none !important;
+  background:none !important;
+  opacity:0 !important;
+  filter:none !important;
+  box-shadow:none !important;
 }
 </style>
 
