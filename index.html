@@ -2921,7 +2921,7 @@
 
     .album-page{
       display:none !important;
-      grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+      grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
       gap:28px !important;
       align-items:start !important;
       max-width:1080px;
@@ -3443,7 +3443,7 @@
     }
 
   
-    /* v34 - Home Fit Mode: trang mở đầu nằm trọn màn hình, phone giữ bố cục 3 ô ngang */
+    /* v34 - Home Fit Mode: trang mở đầu nằm trọn màn hình, phone giữ bố cục theo thiết bị */
     body.home-fit{
       overflow:hidden !important;
       height:100dvh !important;
@@ -3504,7 +3504,7 @@
     body.home-fit .album-page{
       width:100% !important;
       max-width:100% !important;
-      grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+      grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
       gap:clamp(14px, 2vw, 28px) !important;
       align-items:stretch !important;
     }
@@ -3858,7 +3858,7 @@
     body.home-fit .album-page{
       width:100% !important;
       max-width:100% !important;
-      grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+      grid-template-columns:repeat(4, minmax(0, 1fr)) !important;
       gap:clamp(22px, 2.25vw, 34px) !important;
       align-items:stretch !important;
     }
@@ -4190,7 +4190,7 @@
     }
 
   
-    /* v42 - Gương quét hover + logo loading sạch + giữ 3 mục */
+    /* v42 - Gương quét hover + logo loading sạch + giữ 4 mục */
     .logo img{
       font-size:0 !important;
       color:transparent !important;
@@ -5266,6 +5266,247 @@ body.has-drive-bg .site-box{
 }
 </style>
 
+<style id="vd-liquid-glass-cards">
+/* Lớp Liquid Glass chỉ cho các ô album và nút liên hệ.
+   Nội dung/ảnh trong ô giữ nguyên, lớp sáng luôn nằm phía dưới nội dung. */
+#albumPages .album-card,
+.socials .social.social-icon-btn{
+  position:relative !important;
+  isolation:isolate !important;
+  overflow:hidden !important;
+  background:
+    radial-gradient(128% 88% at 8% -18%,
+      rgba(255,255,255,.38) 0%,
+      rgba(220,237,255,.17) 23%,
+      rgba(157,197,255,.045) 47%,
+      transparent 70%),
+    radial-gradient(96% 70% at 100% 108%,
+      rgba(104,151,255,.19) 0%,
+      transparent 63%),
+    linear-gradient(135deg,
+      rgba(230,243,255,.13) 0%,
+      rgba(84,124,201,.10) 42%,
+      rgba(12,27,71,.24) 100%) !important;
+  border:1px solid rgba(230,246,255,.42) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.62),
+    inset 1px 0 0 rgba(255,255,255,.26),
+    inset -1px -1px 0 rgba(64,124,232,.27),
+    inset 0 -12px 24px rgba(3,18,58,.16),
+    0 13px 34px rgba(3,13,46,.25),
+    0 0 0 1px rgba(116,184,255,.10) !important;
+  -webkit-backdrop-filter:blur(28px) saturate(145%) brightness(1.08) !important;
+  backdrop-filter:blur(28px) saturate(145%) brightness(1.08) !important;
+}
+
+/* Phản sáng cong của mặt kính và viền khúc xạ. */
+#albumPages .album-card::before,
+.socials .social.social-icon-btn::before{
+  content:"" !important;
+  position:absolute !important;
+  inset:0 !important;
+  z-index:0 !important;
+  border-radius:inherit !important;
+  pointer-events:none !important;
+  opacity:1 !important;
+  transform:none !important;
+  filter:none !important;
+  background:
+    linear-gradient(113deg,
+      rgba(255,255,255,.31) 0%,
+      rgba(255,255,255,.09) 16%,
+      transparent 34%),
+    radial-gradient(75% 45% at 18% 2%,
+      rgba(255,255,255,.30) 0%,
+      rgba(255,255,255,.065) 45%,
+      transparent 72%),
+    linear-gradient(180deg,
+      rgba(255,255,255,.11) 0%,
+      transparent 26%,
+      rgba(115,180,255,.045) 73%,
+      rgba(255,255,255,.13) 100%) !important;
+}
+
+/* Không phủ lên ảnh: ảnh và chữ vẫn đứng trên lớp kính. */
+#albumPages .album-card .media-shell,
+#albumPages .album-card .album-title,
+#albumPages .album-card .album-desc,
+.socials .social.social-icon-btn .brand-icon,
+.socials .social.social-icon-btn .social-label{
+  position:relative;
+  z-index:2;
+}
+
+@media (hover:hover){
+  #albumPages .album-card:hover,
+  .socials .social.social-icon-btn:hover{
+    border-color:rgba(247,252,255,.68) !important;
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.74),
+      inset 1px 0 0 rgba(255,255,255,.34),
+      inset -1px -1px 0 rgba(74,145,255,.40),
+      inset 0 -12px 24px rgba(3,18,58,.15),
+      0 18px 40px rgba(3,13,46,.30),
+      0 0 23px rgba(154,219,255,.20) !important;
+    -webkit-backdrop-filter:blur(31px) saturate(158%) brightness(1.12) !important;
+    backdrop-filter:blur(31px) saturate(158%) brightness(1.12) !important;
+  }
+}
+
+@media (max-width:820px){
+  #albumPages .album-card,
+  .socials .social.social-icon-btn{
+    -webkit-backdrop-filter:blur(20px) saturate(138%) brightness(1.06) !important;
+    backdrop-filter:blur(20px) saturate(138%) brightness(1.06) !important;
+  }
+}
+</style>
+
+<!-- Favicon tệp riêng: hoạt động ổn định trên Chrome/Safari điện thoại. -->
+<link rel="icon" type="image/png" sizes="256x256" href="favicon.png?v=20260711-1" />
+<link rel="shortcut icon" type="image/png" href="favicon.png?v=20260711-1" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon.png?v=20260711-1" />
+
+  <!-- Thư mục thay ảnh nền: giữ tại đây để không phải tìm lại liên kết khi cập nhật nền. -->
+  <meta name="background-drive-folder" content="https://drive.google.com/drive/folders/1AuLUkL4QaYLOgsogKlb7s2DHkPuDwaYR?usp=share_link" />
+
+  <style id="vd-mobile-contact-refinement">
+    /* Tinh chỉnh riêng cho điện thoại: giữ nguyên khung 4 nút, chỉ tăng chữ và làm kính trong hơn. */
+    .social-address{
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      gap:8px !important;
+    }
+
+    .address-icon{
+      width:21px;
+      height:21px;
+      flex:0 0 21px;
+    }
+
+    .address-icon svg{
+      display:block;
+      width:100%;
+      height:100%;
+    }
+
+    .address-text{
+      min-width:0;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+
+    @media (max-width:820px), (hover:none) and (pointer:coarse){
+      .socials,
+      body.home-fit .socials{
+        gap:10px !important;
+        padding:14px 14px 10px !important;
+        position:fixed !important;
+        left:50% !important;
+        bottom:max(8px, env(safe-area-inset-bottom)) !important;
+        z-index:80 !important;
+        width:min(calc(100vw - 20px), 470px) !important;
+        margin:0 !important;
+        transform:translateX(-50%) !important;
+        box-shadow:0 14px 34px rgba(0,0,0,.18) !important;
+      }
+
+      /* Chừa chỗ để cụm liên hệ ghim dưới không che ảnh cuối trang. */
+      #homeView,
+      body.home-fit #homeView{
+        padding-bottom:182px !important;
+      }
+
+      .social.social-icon-btn,
+      body.home-fit .social.social-icon-btn{
+        /* Giữ nguyên chiều cao/kích thước khung nút hiện có. */
+        font-size:clamp(16px, 4.35vw, 18px) !important;
+        font-weight:800 !important;
+        letter-spacing:.005em !important;
+        text-shadow:0 1px 2px rgba(0,0,0,.42) !important;
+      }
+
+      .social.social-icon-btn .social-label{
+        white-space:nowrap !important;
+        line-height:1.1 !important;
+      }
+
+      .contact-phone .phone-label,
+      .contact-phone .phone-number{
+        font-size:clamp(15px, 4.1vw, 18px) !important;
+        font-weight:850 !important;
+      }
+
+      /* Hàng địa chỉ nằm ngay dưới 4 nút: một dòng, đậm và luôn đọc được. */
+      .social-address,
+      body.home-fit .social-address{
+        grid-column:1 / -1 !important;
+        order:5 !important;
+        margin:0 !important;
+        padding:8px 10px !important;
+        min-height:0 !important;
+        color:#fff !important;
+        font-size:clamp(12px, 3.15vw, 15px) !important;
+        font-weight:850 !important;
+        line-height:1.25 !important;
+        letter-spacing:0 !important;
+        white-space:nowrap !important;
+        overflow:hidden !important;
+        text-overflow:ellipsis !important;
+        background:rgba(5,16,48,.54) !important;
+        border:1px solid rgba(232,245,255,.34) !important;
+        border-radius:12px !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.26), 0 6px 18px rgba(0,0,0,.18) !important;
+        -webkit-backdrop-filter:blur(8px) saturate(135%) !important;
+        backdrop-filter:blur(8px) saturate(135%) !important;
+        text-shadow:0 1px 2px rgba(0,0,0,.72) !important;
+      }
+
+      /* Khoảng đáy bằng đúng khoảng cách giữa hai hàng nút. */
+      .wrap,
+      body.home-fit .wrap{
+        padding-bottom:10px !important;
+      }
+
+      /* Kính nước: nền nhìn xuyên rõ hơn, vẫn có viền và phản chiếu. */
+      .socials .social.social-icon-btn,
+      body.home-fit .socials .social.social-icon-btn{
+        background:
+          radial-gradient(112% 72% at 16% -8%,
+            rgba(255,255,255,.22) 0%,
+            rgba(210,231,255,.055) 43%,
+            transparent 72%),
+          linear-gradient(138deg,
+            rgba(102,137,214,.075) 0%,
+            rgba(18,39,93,.10) 55%,
+            rgba(87,113,189,.06) 100%) !important;
+        border-color:rgba(230,246,255,.46) !important;
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,.54),
+          inset 1px 0 0 rgba(255,255,255,.20),
+          inset -1px -1px 0 rgba(96,154,255,.20),
+          0 10px 26px rgba(3,13,46,.18) !important;
+        -webkit-backdrop-filter:blur(7px) saturate(132%) brightness(1.06) !important;
+        backdrop-filter:blur(7px) saturate(132%) brightness(1.06) !important;
+      }
+
+      .socials .social.social-icon-btn::before{
+        opacity:.82 !important;
+        background:
+          linear-gradient(112deg,
+            rgba(255,255,255,.27) 0%,
+            rgba(255,255,255,.055) 18%,
+            transparent 36%),
+          linear-gradient(180deg,
+            rgba(255,255,255,.075) 0%,
+            transparent 28%,
+            rgba(157,203,255,.035) 76%,
+            rgba(255,255,255,.09) 100%) !important;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="site-box">
@@ -5366,7 +5607,16 @@ body.has-drive-bg .site-box{
           </span>
           <span class="social-label">Bản đồ</span>
         </a>
-        <div class="social-address">Đ/C: 13 Lê Hồng Phong, phường Phan Thiết, tỉnh Lâm Đồng.</div>
+        <div class="social-address">
+          <span class="address-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" role="img" focusable="false">
+              <path d="M32 4C20.7 4 12 12.7 12 24c0 14.5 20 36 20 36s20-21.5 20-36C52 12.7 43.3 4 32 4z" fill="#ea4335"/>
+              <circle cx="32" cy="24" r="13" fill="#fff"/>
+              <path d="M20 25.2 32 15l12 10.2v12.3c0 1.4-1.1 2.5-2.5 2.5h-19c-1.4 0-2.5-1.1-2.5-2.5V25.2zm8 11.3h8v-8h-8v8z" fill="#4285f4"/>
+            </svg>
+          </span>
+          <span class="address-text">13 Lê Hồng Phong, phường Phan Thiết, tỉnh Lâm Đồng.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -5401,12 +5651,15 @@ body.has-drive-bg .site-box{
 
   <script>
 
-    const FEATURED_HOME_ALBUM_IDS = ['anh-the', 'chan-dung', 'phuc-hoi-anh-ai'];
+    const FEATURED_HOME_ALBUM_IDS = ['anh-the', 'chan-dung', 'phuc-hoi-anh-ai', 'in-anh-dep'];
 
     // Nếu dùng GitHub Pages: dán URL Web App Apps Script dạng .../exec vào đây.
     // Nếu chạy trực tiếp trong Apps Script: giá trị này sẽ bị bỏ qua.
     // Dán link Apps Script /exec vào đây khi up GitHub Pages.
-    const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbzIXuRkraZ4ASUc1d-A6wWLqiB5W5Y4CGvUZR96MhX3Y0lvpbup7nbYFqsRVjKlZq15/exec';
+  const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbw3TysCUKE-2mjC8WTNVJ0uMzr-Hj8_baY3N6bjhI-1EOxDhXuFugpXe9LLeoEHcHuk/exec';
+    // Lưu nguồn thư mục nền tại một chỗ. Link thư mục không phải URL ảnh trực tiếp,
+    // vì vậy ảnh nền vẫn được Apps Script trả về dưới dạng URL ảnh qua siteSettings.
+    const BACKGROUND_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/1AuLUkL4QaYLOgsogKlb7s2DHkPuDwaYR?usp=share_link';
 
     function isAppsScriptRuntime(){
       return !!(window.google && google.script && google.script.run);
@@ -5426,6 +5679,12 @@ body.has-drive-bg .site-box{
           api: api,
           callback: callbackName
         });
+
+        // Gửi kèm nguồn thư mục khi tải cài đặt nền. Apps Script có thể dùng giá trị
+        // này để lấy ảnh mới từ thư mục mà không cần sửa lại index.html.
+        if (api === 'siteSettings' && BACKGROUND_DRIVE_FOLDER_URL) {
+          query.set('backgroundDriveFolder', BACKGROUND_DRIVE_FOLDER_URL);
+        }
 
         Object.keys(params || {}).forEach((key) => {
           if (params[key] !== undefined && params[key] !== null) {
@@ -5742,7 +6001,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setupLogoCanvasSweep();
       setupPhoneDialLink();
       document.querySelectorAll('.social-address').forEach((el) => {
-        el.textContent = 'Đ/C: 13 Lê Hồng Phong, phường Phan Thiết, tỉnh Lâm Đồng.';
+        el.innerHTML = `<span class="address-icon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img" focusable="false"><path d="M32 4C20.7 4 12 12.7 12 24c0 14.5 20 36 20 36s20-21.5 20-36C52 12.7 43.3 4 32 4z" fill="#ea4335"/><circle cx="32" cy="24" r="13" fill="#fff"/><path d="M20 25.2 32 15l12 10.2v12.3c0 1.4-1.1 2.5-2.5 2.5h-19c-1.4 0-2.5-1.1-2.5-2.5V25.2zm8 11.3h8v-8h-8v8z" fill="#4285f4"/></svg></span><span class="address-text">13 Lê Hồng Phong, phường Phan Thiết, tỉnh Lâm Đồng.</span>`;
       });
 
       const logoImg = document.getElementById('siteLogo');
@@ -5884,13 +6143,15 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((albums) => {
           const allAlbums = albums || [];
           const albumMap = new Map(allAlbums.map((album) => [album.id, album]));
-          state.albums = FEATURED_HOME_ALBUM_IDS
+          const featuredAlbums = FEATURED_HOME_ALBUM_IDS
             .map((id) => albumMap.get(id))
             .filter(Boolean);
+          const homepageAlbums = [
+            ...featuredAlbums,
+            ...allAlbums.filter((album) => !FEATURED_HOME_ALBUM_IDS.includes(album.id))
+          ].slice(0, 4);
 
-          if (!state.albums.length) {
-            state.albums = allAlbums.slice(0, 3);
-          }
+          state.albums = homepageAlbums;
 
           renderAlbumPages(state.albums);
         })
@@ -5908,7 +6169,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pagesWrap.innerHTML = '';
       dotsWrap.innerHTML = '';
 
-      const pageSize = 3;
+      const pageSize = 4;
       const pageCount = Math.max(1, Math.ceil(albums.length / pageSize));
       document.getElementById('albumPager').style.display = pageCount > 1 ? 'flex' : 'none';
 
@@ -5960,6 +6221,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       card.addEventListener('click', () => openAlbum(album.id));
+
       return card;
     }
 
@@ -6013,6 +6275,11 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
           </div>`;
       window.scrollTo({top: 0, behavior: 'smooth'});
+
+      if (albumMeta && albumMeta.images) {
+        renderAlbumDetail(albumMeta);
+        return;
+      }
 
       fetchAlbumImages(albumId)
         .then(renderAlbumDetail)
