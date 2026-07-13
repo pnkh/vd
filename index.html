@@ -5651,12 +5651,29 @@ body.has-drive-bg .site-box{
 
   <script>
 
-    const FEATURED_HOME_ALBUM_IDS = ['anh-the', 'chan-dung', 'phuc-hoi-anh-ai', 'in-anh-dep'];
+    const FEATURED_HOME_ALBUM_IDS = ['anh-the', 'chan-dung', 'phuc-hoi-anh-ai'];
+    const DRIVE_FOLDER_CARD = {
+      id: 'thu-muc-anh-google-drive',
+      title: 'IN ẢNH ĐẸP',
+      desc: 'Xem ảnh in mẫu',
+      coverImages: [
+        {
+          thumbUrl: 'https://drive.google.com/thumbnail?id=1mc2Wjg3rlDFY2qAsrS7rUGj-7uyB7pnd&sz=w1200'
+        }
+      ],
+      images: [
+        {
+          name: 'In ảnh đẹp',
+          thumbUrl: 'https://drive.google.com/thumbnail?id=1mc2Wjg3rlDFY2qAsrS7rUGj-7uyB7pnd&sz=w1200',
+          fullUrl: 'https://drive.google.com/thumbnail?id=1mc2Wjg3rlDFY2qAsrS7rUGj-7uyB7pnd&sz=w2000'
+        }
+      ]
+    };
 
     // Nếu dùng GitHub Pages: dán URL Web App Apps Script dạng .../exec vào đây.
     // Nếu chạy trực tiếp trong Apps Script: giá trị này sẽ bị bỏ qua.
     // Dán link Apps Script /exec vào đây khi up GitHub Pages.
-  const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbw3TysCUKE-2mjC8WTNVJ0uMzr-Hj8_baY3N6bjhI-1EOxDhXuFugpXe9LLeoEHcHuk/exec';
+  const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbzIXuRkraZ4ASUc1d-A6wWLqiB5W5Y4CGvUZR96MhX3Y0lvpbup7nbYFqsRVjKlZq15/exec';
     // Lưu nguồn thư mục nền tại một chỗ. Link thư mục không phải URL ảnh trực tiếp,
     // vì vậy ảnh nền vẫn được Apps Script trả về dưới dạng URL ảnh qua siteSettings.
     const BACKGROUND_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/1AuLUkL4QaYLOgsogKlb7s2DHkPuDwaYR?usp=share_link';
@@ -6149,9 +6166,12 @@ document.addEventListener('DOMContentLoaded', () => {
           const homepageAlbums = [
             ...featuredAlbums,
             ...allAlbums.filter((album) => !FEATURED_HOME_ALBUM_IDS.includes(album.id))
-          ].slice(0, 4);
+          ].slice(0, 3);
 
-          state.albums = homepageAlbums;
+          state.albums = [
+            ...homepageAlbums,
+            DRIVE_FOLDER_CARD
+          ];
 
           renderAlbumPages(state.albums);
         })
